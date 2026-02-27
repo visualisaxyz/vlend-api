@@ -11,7 +11,10 @@ const mainnetServer = fastify({
 // Register CORS for the server
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://vlend.visualisa.xyz'];
+    const allowedOrigins = [
+      'https://vlend.visualisa.xyz',
+      'https://api.vlend.visualisa.xyz'
+    ];
 
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin || allowedOrigins.includes(origin)) {

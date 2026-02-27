@@ -10,6 +10,7 @@ vLend API provides REST endpoints for protocol data: vaults, collaterals, stabil
 
 - Node.js 16.x+
 - MegaETH RPC URL
+- Supabase (for protocol stats and whitelist)
 
 ## Setup
 
@@ -18,12 +19,20 @@ npm install
 cp .env.example .env
 ```
 
-Edit `.env`:
+Edit `.env` with your values:
 
 ```
 MEGAETH_RPC_URL=https://rpc.megaeth.org
 PORT=3000
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_KEY=your-anon-key
 ```
+
+### Supabase setup
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. In **SQL Editor**, run the schema from `supabase/schema.sql` to create the required tables
+3. Copy your project URL and anon key from **Project Settings > API** into `.env`
 
 ## Run
 
@@ -58,16 +67,22 @@ Server runs at `http://127.0.0.1:3000`.
 
 ## Environment Variables
 
-| Variable          | Required | Description                 |
-| ----------------- | -------- | --------------------------- |
-| `MEGAETH_RPC_URL` | Yes      | MegaETH mainnet RPC URL     |
-| `PORT`            | No       | Server port (default: 3000) |
+| Variable          | Required | Description                          |
+| ----------------- | -------- | ------------------------------------ |
+| `MEGAETH_RPC_URL` | Yes      | MegaETH mainnet RPC URL              |
+| `SUPABASE_URL`    | Yes      | Supabase project URL                 |
+| `SUPABASE_KEY`    | Yes      | Supabase anon/publishable key        |
+| `PORT`            | No       | Server port (default: 3000)          |
 
 ## Docker
 
 ```bash
 docker build -t vlend-api .
-docker run -d -p 3000:3000 -e MEGAETH_RPC_URL=https://rpc.megaeth.org --name vlend-api vlend-api
+docker run -d -p 3000:3000 \
+  -e MEGAETH_RPC_URL=https://rpc.megaeth.org \
+  -e SUPABASE_URL=your-supabase-url \
+  -e SUPABASE_KEY=your-supabase-key \
+  --name vlend-api vlend-api
 ```
 
 ## License
