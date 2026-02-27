@@ -1,0 +1,11 @@
+[
+  {
+    "tokenName": "WETH",
+    "address": "0x4200000000000000000000000000000000000006",
+    "mcr": 120,
+    "mlr": 110,
+    "decimals": 18,
+    "oracle": "0x594059544a9444d6C6cb35eaf88c5785BCf27f1C",
+    "oracleType": "ChainlinkPriceOracle"
+  }
+]

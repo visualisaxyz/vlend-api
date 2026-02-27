@@ -1,0 +1,27 @@
+{
+  "name": "vlend-api",
+  "version": "1.0.0",
+  "description": "vLend protocol API for MegaETH mainnet",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "axios": "^1.6.5",
+    "dotenv": "^16.4.7",
+    "ethers": "^5.4.6",
+    "ethers-multicall-provider": "^3.1.2",
+    "ethers-multicall2": "^0.1.1",
+    "fastify": "^3.29.5",
+    "fastify-cors": "^6.0.3",
+    "uuidv4": "^6.2.13",
+    "web3": "^4.9.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
