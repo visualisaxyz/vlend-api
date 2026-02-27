@@ -36,9 +36,10 @@ module.exports = fp(async (fastify, opts) => {
           `Error refreshing statistics for chain ${chain}:`,
           error.message
         );
-        reply
-          .status(500)
-          .send({ error: `Failed to refresh statistics for chain: ${chain}` });
+        reply.status(500).send({
+          error: `Failed to refresh statistics for chain: ${chain}`,
+          message: error.message
+        });
       }
     }
   });

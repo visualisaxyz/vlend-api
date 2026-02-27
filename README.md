@@ -34,6 +34,16 @@ SUPABASE_KEY=your-anon-key
 2. In **SQL Editor**, run the schema from `supabase/schema.sql` to create the required tables
 3. Copy your project URL and anon key from **Project Settings > API** into `.env`
 
+### Protocol statistics (historical_statistics)
+
+`/protocolStats` reads from the Supabase `historical_statistics` table. That table is populated by calling `/refreshStatistics`, which fetches data from the chain and writes it to Supabase.
+
+**First-time setup:** Call the refresh endpoint once to populate the table:
+
+```bash
+curl https://api.vlend.visualisa.xyz/refreshStatistics
+```
+
 ## Run
 
 ```bash
@@ -58,6 +68,7 @@ Server runs at `http://127.0.0.1:3000`.
 | `GET /redeemableVaults`                | Redeemable vaults                       |
 | `GET /liquidatableVaults`              | Liquidatable vaults                     |
 | `GET /protocolStats`                   | Protocol statistics                     |
+| `GET /refreshStatistics`               | Refresh stats from chain → Supabase     |
 | `GET /vlend_staking/overview`          | VLEND staking overview                  |
 | `GET /stability_pool/overview`         | Stability pool overview                 |
 | `GET /stability_pool/rewards/:address` | User stability pool rewards             |
