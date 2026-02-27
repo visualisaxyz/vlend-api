@@ -22,7 +22,7 @@ cp .env.example .env
 Edit `.env` with your values:
 
 ```
-MEGAETH_RPC_URL=https://rpc.megaeth.org
+MEGAETH_RPC_URL=https://mainnet.megaeth.com/rpc
 PORT=3000
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_KEY=your-anon-key
@@ -90,7 +90,7 @@ Server runs at `http://127.0.0.1:3000`.
 ```bash
 docker build -t vlend-api .
 docker run -d -p 3000:3000 \
-  -e MEGAETH_RPC_URL=https://rpc.megaeth.org \
+  -e MEGAETH_RPC_URL=https://mainnet.megaeth.com/rpc \
   -e SUPABASE_URL=your-supabase-url \
   -e SUPABASE_KEY=your-supabase-key \
   --name vlend-api vlend-api

@@ -13,6 +13,13 @@ CREATE TABLE IF NOT EXISTS historical_statistics (
 CREATE INDEX IF NOT EXISTS idx_historical_statistics_chain_created 
   ON historical_statistics (chain, created_at DESC);
 
+-- RLS: allow anon key to insert/select (for refreshStatistics)
+ALTER TABLE historical_statistics ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow anon insert" ON historical_statistics
+  FOR INSERT TO anon WITH CHECK (true);
+CREATE POLICY "Allow anon select" ON historical_statistics
+  FOR SELECT TO anon USING (true);
+
 -- Whitelist: referrers (uniqueId -> referred addresses)
 CREATE TABLE IF NOT EXISTS referers (
   id BIGSERIAL PRIMARY KEY,
