@@ -13,7 +13,10 @@ const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
       'https://vlend.visualisa.xyz',
-      'https://api.vlend.visualisa.xyz'
+      'https://api.vlend.visualisa.xyz',
+      'https://dapp.visualisa.xyz',
+      'http://localhost:3002',
+      'http://127.0.0.1:3002'
     ];
 
     // Allow requests with no origin (like mobile apps or curl requests)

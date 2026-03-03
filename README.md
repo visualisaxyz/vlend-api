@@ -78,12 +78,12 @@ Server runs at `http://127.0.0.1:3000`.
 
 ## Environment Variables
 
-| Variable          | Required | Description                          |
-| ----------------- | -------- | ------------------------------------ |
-| `MEGAETH_RPC_URL` | Yes      | MegaETH mainnet RPC URL              |
-| `SUPABASE_URL`    | Yes      | Supabase project URL                 |
-| `SUPABASE_KEY`    | Yes      | Supabase anon/publishable key        |
-| `PORT`            | No       | Server port (default: 3000)          |
+| Variable          | Required | Description                   |
+| ----------------- | -------- | ----------------------------- |
+| `MEGAETH_RPC_URL` | Yes      | MegaETH mainnet RPC URL       |
+| `SUPABASE_URL`    | Yes      | Supabase project URL          |
+| `SUPABASE_KEY`    | Yes      | Supabase anon/publishable key |
+| `PORT`            | No       | Server port (default: 3000)   |
 
 ## Docker
 
